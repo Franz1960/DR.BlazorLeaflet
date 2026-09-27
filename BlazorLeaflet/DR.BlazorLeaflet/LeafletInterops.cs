@@ -80,8 +80,8 @@ namespace DR.BlazorLeaflet
         public static ValueTask PanTo(IJSRuntime jsRuntime, string mapId, PointF position, bool animate, float duration, float easeLinearity, bool noMoveStart) =>
             jsRuntime.InvokeVoidAsync($"{_BaseObjectContainer}.panTo", mapId, position, animate, duration, easeLinearity, noMoveStart);
 
-        public static ValueTask<LatLng[]> GetBounds(IJSRuntime jsRuntime, string mapId) =>
-            jsRuntime.InvokeAsync<LatLng[]>($"{_BaseObjectContainer}.getBounds", mapId);
+        public static ValueTask<Bounds> GetBounds(IJSRuntime jsRuntime, string mapId) =>
+            jsRuntime.InvokeAsync<Bounds>($"{_BaseObjectContainer}.getBounds", mapId);
 
         public static ValueTask<LatLng> GetCenter(IJSRuntime jsRuntime, string mapId) =>
             jsRuntime.InvokeAsync<LatLng>($"{_BaseObjectContainer}.getCenter", mapId);

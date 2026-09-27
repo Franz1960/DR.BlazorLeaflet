@@ -220,7 +220,7 @@ window.leafletBlazor = {
     },
     getBounds: function (mapId) {
         let bounds = maps[mapId].getBounds();
-        return [bounds._southWest, bounds._northEast];
+      return { SouthWest: bounds._southWest, NorthEast: bounds._northEast };
     },
     getCenter: function (mapId) {
         return maps[mapId].getCenter();

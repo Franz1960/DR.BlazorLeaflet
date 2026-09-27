@@ -184,7 +184,7 @@ namespace DR.BlazorLeaflet
             LeafletInterops.PanTo(_jsRuntime, Id, position, animate, duration, easeLinearity, noMoveStart);
         }
 
-    public async Task<LatLng[]> GetBounds() => await LeafletInterops.GetBounds(_jsRuntime,Id);
+    public async Task<Bounds> GetBounds() => await LeafletInterops.GetBounds(_jsRuntime,Id);
 
     public async Task<LatLng> GetCenter() => await LeafletInterops.GetCenter(_jsRuntime, Id);
         public async Task<float> GetZoom() =>
