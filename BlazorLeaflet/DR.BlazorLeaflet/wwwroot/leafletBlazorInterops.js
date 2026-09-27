@@ -218,6 +218,10 @@ window.leafletBlazor = {
             noMoveStart: noMoveStart
         });
     },
+    getBounds: function (mapId) {
+        let bounds = maps[mapId].getBounds();
+        return [bounds._southWest, bounds._northEast];
+    },
     getCenter: function (mapId) {
         return maps[mapId].getCenter();
     },
