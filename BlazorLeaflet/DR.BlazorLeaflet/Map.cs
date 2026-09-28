@@ -174,12 +174,15 @@ namespace DR.BlazorLeaflet
             }
         }
 
-        public void FitBounds(PointF corner1, PointF corner2, PointF? padding = null, float? maxZoom = null)
-        {
-            LeafletInterops.FitBounds(_jsRuntime, Id, corner1, corner2, padding, maxZoom);
-        }
+    public void FitBounds(LatLng corner1,LatLng corner2,PointF? padding = null,float? maxZoom = null) {
+      LeafletInterops.FitBounds(_jsRuntime,Id,new PointF(corner1.Lat, corner1.Lng),new PointF(corner2.Lat, corner2.Lng),padding,maxZoom);
+    }
 
-        public void PanTo(PointF position, bool animate = false, float duration = 0.25f, float easeLinearity = 0.25f, bool noMoveStart = false)
+    public void FitBounds(PointF corner1,PointF corner2,PointF? padding = null,float? maxZoom = null) {
+      LeafletInterops.FitBounds(_jsRuntime,Id,corner1,corner2,padding,maxZoom);
+    }
+
+    public void PanTo(PointF position, bool animate = false, float duration = 0.25f, float easeLinearity = 0.25f, bool noMoveStart = false)
         {
             LeafletInterops.PanTo(_jsRuntime, Id, position, animate, duration, easeLinearity, noMoveStart);
         }
