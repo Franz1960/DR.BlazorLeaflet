@@ -6,7 +6,7 @@ namespace DR.BlazorLeaflet.Models
   public class LatLng
   {
     public override string ToString() {
-      return $"lat={this.Lat.ToString("0.000",CultureInfo.InvariantCulture)}, lng={this.Lng.ToString("0.000",CultureInfo.InvariantCulture)}";
+      return $"lat={this.Lat.ToString("0.00000",CultureInfo.InvariantCulture)}, lng={this.Lng.ToString("0.00000",CultureInfo.InvariantCulture)}";
     }
 
     public float Lat { get; set; }
