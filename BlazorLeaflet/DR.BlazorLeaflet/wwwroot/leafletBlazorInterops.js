@@ -80,6 +80,7 @@ window.leafletBlazor = {
     },
     addPolyline: function (mapId, polyline, objectReference) {
         const layer = L.polyline(shapeToLatLngArray(polyline.shape), createPolyline(polyline));
+        connectInteractionEvents(layer, objectReference);
         addLayer(mapId, layer, polyline.id);
         setTooltipAndPopupIfDefined(polyline, layer);
     },
@@ -91,6 +92,7 @@ window.leafletBlazor = {
     },
     addPolygon: function (mapId, polygon, objectReference) {
         const layer = L.polygon(shapeToLatLngArray(polygon.shape), createPolyline(polygon));
+        connectInteractionEvents(layer, objectReference);
         addLayer(mapId, layer, polygon.id);
         setTooltipAndPopupIfDefined(polygon, layer);
     },
@@ -102,6 +104,7 @@ window.leafletBlazor = {
     },
     addRectangle: function (mapId, rectangle, objectReference) {
         const layer = L.rectangle([[rectangle.shape.bottom, rectangle.shape.left], [rectangle.shape.top, rectangle.shape.right]], createPolyline(rectangle));
+        connectInteractionEvents(layer, objectReference);
         addLayer(mapId, layer, rectangle.id);
         setTooltipAndPopupIfDefined(rectangle, layer);
     },
@@ -117,6 +120,7 @@ window.leafletBlazor = {
                 ...createPath(circle),
                 radius: circle.radius
             });
+        connectInteractionEvents(layer, objectReference);
         addLayer(mapId, layer, circle.id);
         setTooltipAndPopupIfDefined(circle, layer);
     },
